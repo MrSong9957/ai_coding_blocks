@@ -1,23 +1,28 @@
+/* 设置根元素的样式，限制最大宽度，居中显示，并添加内边距和居中对齐文本 */
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  max-width: none;
+  margin: 0;
+  padding: 0;
   text-align: center;
 }
 
+/* 设置logo的基本样式，包括高度、内边距，以及滤镜过渡效果 */
 .logo {
   height: 6em;
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
 }
+/* 当鼠标悬停在logo上时，添加蓝色阴影效果 */
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
 }
+/* 当鼠标悬停在React logo上时，添加青色阴影效果 */
 .logo.react:hover {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+/* 定义logo旋转的动画效果，从0度旋转到360度 */
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
@@ -27,20 +32,24 @@
   }
 }
 
+/* 当用户没有设置减少动画效果时，让第二个链接中的logo无限循环旋转 */
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
 }
 
+/* 设置卡片组件的内边距 */
 .card {
   padding: 2em;
 }
 
+/* 设置阅读文档提示文字的颜色 */
 .read-the-docs {
   color: #888;
 }
 
+/* 设置侧边栏的样式，固定位置，设置宽度、背景颜色、内边距和阴影 */
 .sidebar {
   position: fixed;
   left: 0;
@@ -48,11 +57,36 @@
   height: 100vh;
   width: 200px;
   background-color: #f0f0f0;
-  padding: 20px;
+  padding: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
+/* 设置侧边栏按钮的样式，块级显示，宽度占满侧边栏，并添加底部外边距 */
 .sidebar button {
   display: block;
   width: 100%;
   margin-bottom: 10px;
+}
+
+/* 设置购物篮容器的样式，调整左侧外边距，设置宽度、高度、背景颜色和阴影 */
+.basket-container { /* 定义购物篮容器的样式 */
+  margin-left: 0; /* 继续缩小左侧容器和中间容器的间距，直至空白几乎不可见 */
+  margin-top: 0; /* 设置顶部外边距为0 */
+  padding-top: 0; /* 设置顶部内边距为0 */
+  width: 50vw; /* 计算购物篮容器的宽度 */
+  height: 100vh; /* 设置购物篮容器的高度为视口高度 */
+  padding: 0; /* 设置内边距为0 */
+  background-color: transparent; /* 设置购物篮容器的背景颜色为透明 */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* 为购物篮容器添加阴影效果 */
+}
+
+/* 设置参数容器的样式，设置宽度、高度、背景颜色和阴影 */
+.params-container {
+  margin-top: 0;
+  padding-top: 0;
+  width: 50vw;
+  height: 100vh;
+  padding: 0;
+  background-color: #e0e0e0;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
