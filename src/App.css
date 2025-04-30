@@ -69,28 +69,37 @@
 }
 
 /* 设置购物篮容器的样式，调整左侧外边距，设置宽度、高度、背景颜色和阴影 */
-.basket-container { /* 定义购物篮容器的样式 */
-  margin-left: 0; /* 继续缩小左侧容器和中间容器的间距，直至空白几乎不可见 */
-  margin-top: 0; /* 设置顶部外边距为0 */
-  padding-top: 0; /* 设置顶部内边距为0 */
-  width: 50vw; /* 计算购物篮容器的宽度 */
-  height: 100vh; /* 设置购物篮容器的高度为视口高度 */
-  padding: 0; /* 设置内边距为0 */
-  background-color: transparent; /* 设置购物篮容器的背景颜色为透明 */
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* 为购物篮容器添加阴影效果 */
+.basket-container { 
+  margin-left: 280px; 
+  margin-top: 0; 
+  padding-top: 0; 
+  width: 60vh; 
+  height: 100vh; 
+  padding: 2em; 
+  background-color: transparent; 
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  text-align: left; 
+  word-wrap: break-word; 
+  white-space: normal; 
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; 
+  line-height: 1.6; 
+  letter-spacing: 0.05em; 
+  color: #333; 
 }
 
 /* 设置参数容器的样式，设置宽度、高度、背景颜色和阴影 */
 .params-container {
+  margin-left: 0; /* 移除左侧外边距 */
   margin-top: 0;
   padding-top: 0;
-  width: 50vw;
+  /* 调整宽度，使用 calc 函数计算剩余宽度的一半 */
+  width: 104vh; 
   height: 100vh;
-  padding: 2em; /* 添加内边距 */
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; /* 设置字体 */
-  line-height: 2.0; /* 增加行高 */
-  letter-spacing: 0.1em; /* 增加字间距 */
-  text-align: left; /* 设置文字左对齐 */
+  padding: 2em; 
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; 
+  line-height: 2.0; 
+  letter-spacing: 0.1em; 
+  text-align: left; 
   background-color: #e0e0e0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
