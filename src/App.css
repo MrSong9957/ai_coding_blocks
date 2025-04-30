@@ -86,7 +86,11 @@
   padding-top: 0;
   width: 50vw;
   height: 100vh;
-  padding: 0;
+  padding: 2em; /* 添加内边距 */
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif; /* 设置字体 */
+  line-height: 2.0; /* 增加行高 */
+  letter-spacing: 0.1em; /* 增加字间距 */
+  text-align: left; /* 设置文字左对齐 */
   background-color: #e0e0e0;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
