@@ -5,9 +5,13 @@ import './App.css';
 import data from './data.json';
 
 // 可拖拽键组件
-const DraggableKey = ({ keyText }) => {
+const DraggableKey = ({ keyText, section, param }) => {
   const handleDragStart = (e) => {
-    e.dataTransfer.setData('text/plain', JSON.stringify({ param: keyText }));
+    e.dataTransfer.setData('text/plain', JSON.stringify({ 
+      key: keyText, 
+      section, 
+      param 
+    }));
   };
 
   return (
@@ -48,7 +52,7 @@ const Basket = ({ items, onDrop }) => {
     >
       {items.map((item, index) => (
         <div key={index}>
-          <strong>{item.param}</strong>
+          <strong>{item.section} - {item.param}: {item.keys.join(', ')}</strong>
         </div>
       ))}
     </div>
@@ -60,8 +64,24 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState(Object.keys(data)[0]);
   const [basketItems, setBasketItems] = useState([]);
 
-  const addToBasket = (item) => {
-    setBasketItems([...basketItems, item]);
+  const addToBasket = (newItem) => {
+    const existingIndex = basketItems.findIndex(item => 
+      item.section === newItem.section && item.param === newItem.param
+    );
+
+    if (existingIndex !== -1) {
+      const updatedItems = [...basketItems];
+      if (!updatedItems[existingIndex].keys.includes(newItem.key)) {
+        updatedItems[existingIndex].keys.push(newItem.key);
+      }
+      setBasketItems(updatedItems);
+    } else {
+      setBasketItems([...basketItems, {
+        section: newItem.section,
+        param: newItem.param,
+        keys: [newItem.key]
+      }]);
+    }
   };
 
   return (
@@ -87,6 +107,8 @@ function App() {
                   <DraggableKey 
                     key={index} 
                     keyText={keyText.trim().replace(/\([^)]*\)/g, '')} 
+                    section={section}
+                    param={param}
                   />
                 ))}
               </div>
