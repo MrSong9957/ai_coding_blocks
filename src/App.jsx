@@ -150,6 +150,43 @@ function App() {
           </div>
         ))}
       </div>
+      {/* 新增悬浮按钮，修改填充色为苹果经典蓝色 */}
+      <button 
+        style={{ 
+          position: 'fixed', 
+          bottom: '30px', 
+          left: '30px', 
+          backgroundColor: '#007AFF', // 苹果经典蓝色
+          color: 'white', 
+          border: 'none', 
+          borderRadius: '28px', 
+          padding: '16px 32px', 
+          cursor: 'pointer', 
+          fontSize: '18px', 
+          fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif', 
+          fontWeight: '550', 
+          boxShadow: '0 2px 6px rgba(0, 0, 0, 0.1)', 
+          transition: 'all 0.2s ease-in-out', 
+          zIndex: 1000,
+          userSelect: 'none' 
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.backgroundColor = '#0056b3'; // 悬停时颜色变深
+          e.target.style.transform = 'scale(1.05)'; 
+          e.target.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.15)'; 
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.backgroundColor = '#007AFF'; // 恢复原始颜色
+          e.target.style.transform = 'scale(1)'; 
+          e.target.style.boxShadow = '0 2px 6px rgba(0, 0, 0, 0.1)'; 
+        }}
+        onClick={() => {
+          // 这里可以添加生成提示词的逻辑
+          console.log('生成提示词按钮被点击');
+        }}
+      >
+        生成提示词
+      </button>
     </div>
   );
 }
